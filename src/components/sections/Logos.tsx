@@ -22,7 +22,7 @@ const TRACK = [...HALF, ...HALF];
 
 export function Logos() {
   return (
-    <section className="relative overflow-hidden border-b border-rule bg-white py-7" aria-label="Health funds, partners and memberships">
+    <section className="relative overflow-hidden border-y border-rule bg-white py-7" aria-label="Health funds, partners and memberships">
       <ul className="logo-rail flex w-max items-center">
         {TRACK.map((l, i) => (
           <li key={i} className="flex h-12 w-[170px] flex-none items-center justify-center px-4" aria-hidden={i >= logos.length}>
