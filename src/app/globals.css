@@ -286,17 +286,24 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 400; }
 .rise { opacity: 0; transform: translateY(20px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
 .rise[data-shown="true"] { opacity: 1; transform: none; }
 
-/* ── MARQUEE ───────────────────────────────────────────────────────── */
-.marquee {
-  overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+/* ── MARQUEES ──────────────────────────────────────────────────────────
+   Both rails hold two identical halves and travel exactly -50%, so the loop
+   is seamless. will-change keeps the track on its own layer instead of
+   repainting the row every frame. */
+.logo-rail, .review-rail {
+  will-change: transform;
+  backface-visibility: hidden;
 }
-.marquee-track { display: flex; width: max-content; animation: marquee 45s linear infinite; }
-.marquee:hover .marquee-track { animation-play-state: paused; }
-@keyframes marquee { to { transform: translateX(-50%); } }
+/* Durations are tuned per breakpoint because the track is a fixed width:
+   the same duration reads much slower on a phone. */
+.logo-rail { animation: marquee 44s linear infinite; }
+.logo-rail:hover { animation-play-state: paused; }
+@media (min-width: 768px) { .logo-rail { animation-duration: 70s; } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* Reviews travel the other way. */
-.review-rail { animation: marquee-reverse 70s linear infinite; }
+.review-rail { animation: marquee-reverse 48s linear infinite; }
+@media (min-width: 768px) { .review-rail { animation-duration: 72s; } }
 .review-rail:hover { animation-play-state: paused; }
 @keyframes marquee-reverse { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
@@ -312,7 +319,7 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 400; }
 
 @media (prefers-reduced-motion: reduce) {
   .rise { opacity: 1 !important; transform: none !important; transition: none !important; }
-  .load-in, .mega, .scrim, .col-in, .slide-r, .slide-l, .marquee-track, .review-rail, .hero-img img, .faq[open] .faq-body { animation: none !important; }
+  .load-in, .mega, .scrim, .col-in, .slide-r, .slide-l, .logo-rail, .review-rail, .hero-img img, .faq[open] .faq-body { animation: none !important; }
 }
 
 }

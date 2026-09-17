@@ -10,9 +10,10 @@ import { rating, reviews, site, type Review } from "@/content/site";
  * left to right, paused on hover. The set repeats until one half is wider than
  * any screen, otherwise the loop shows a gap.
  */
+// One half must be wider than any screen, or the -50% loop shows a gap.
 const HALF = (() => {
   const out: Review[] = [];
-  while (out.length * 340 < 2600) out.push(...reviews);
+  while (out.length * 290 < 3600) out.push(...reviews);
   return out;
 })();
 const RAIL = [...HALF, ...HALF];

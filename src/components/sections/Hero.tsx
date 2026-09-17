@@ -65,7 +65,7 @@ export function Hero() {
 
           <a
             href={site.booking}
-            className="absolute right-3 top-4 flex items-center gap-2.5 rounded-full border border-rule bg-white py-2.5 pl-3.5 pr-5 shadow-l transition-colors hover:bg-mist sm:right-6 lg:-right-6 lg:top-10"
+            className="absolute right-3 top-4 hidden items-center gap-2.5 sm:flex rounded-full border border-rule bg-white py-2.5 pl-3.5 pr-5 shadow-l transition-colors hover:bg-mist sm:right-6 lg:-right-6 lg:top-10"
           >
             <IconClock size={16} className="flex-none text-teal-ink" />
             <span className="text-[12.5px] font-medium text-ink">Open Thursdays until 7pm</span>
