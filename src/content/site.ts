@@ -137,44 +137,138 @@ export const suburbs =
   "Pyrmont, Sydney CBD, Glebe, Haymarket, Annandale, Rozelle, Balmain, Ultimo, Chippendale, Redfern, Surry Hills, Lilyfield, Newtown";
 
 /*
- * REVIEWS — PLACEHOLDERS. Waiting on the client's real Google reviews.
- * Every entry is flagged `placeholder` and renders a visible "Placeholder" tag;
- * swap in the verbatim review text + reviewer name and delete the flag.
- * The 4.9 star rating is real (the live site's Google badge); the 200+ review
- * count is from the client, 17 Sep 2026.
+ * REVIEWS — real, from the STAR dentistry Google Business profile (captured
+ * 18 Sep 2026). Wording is verbatim: don't tidy, trim or reword it. Only
+ * reviews whose full text was visible are used — anything Google truncated
+ * with "… More" is left out rather than cut mid-sentence.
+ *
+ * Display names are as Google shows them, with an all-caps one title-cased.
  */
 export type Review = { name: string; role: string; quote: string; placeholder?: boolean };
 
 export const rating = { score: "4.9", count: "200+", source: "Google" };
 
-// The two or three standouts, each given its own section as you scroll.
+const GOOGLE = "Google review";
+
+// The three that best show the service: the result, the unhurried care, and
+// turning a bad past experience around. Each gets its own band on the page.
 export const highlights: Review[] = [
   {
-    name: "Patient name",
-    role: "Google review",
-    quote: "Placeholder review — a standout patient review about how calm and unhurried their appointment felt goes here.",
-    placeholder: true,
+    name: "Brendon Clark",
+    role: GOOGLE,
+    quote:
+      "I love my teeth! They look amazing. After doing a lot of research I couldn’t be happier with my choice. Highly recommend Dr Tippett. He was spot on with his advice and work. The process has been seamless. He got straight to the point and got the job done. I confidently smile now.",
   },
   {
-    name: "Patient name",
-    role: "Google review",
-    quote: "Placeholder review — a standout review about a treatment result, like veneers, Invisalign or implants, goes here.",
-    placeholder: true,
+    name: "Michaelangelo Francis Setiawan",
+    role: GOOGLE,
+    quote:
+      "The team here doesn’t rush you through appointments just to fit more patients in, they take their time to do things properly which shows in the quality of work you end up with",
   },
   {
-    name: "Patient name",
-    role: "Google review",
-    quote: "Placeholder review — a standout review from a nervous patient about Dr Richard and the team goes here.",
-    placeholder: true,
+    name: "Burcu Vachan",
+    role: GOOGLE,
+    quote:
+      "Dr Tippett was excellent in helping extract my infected wisdom tooth roots without pain or discomfort. His professionalism and expertise as well as the support of his team really helped turn my previous negative experience into a positive one. Would highly recommend.",
   },
 ];
 
-export const reviews: Review[] = Array.from({ length: 8 }, (_, i) => ({
-  name: `Patient ${i + 1}`,
-  role: "Google review",
-  quote:
-    i % 2
-      ? "Placeholder review — the client's real Google review text goes here, word for word."
-      : "Placeholder review — the client's real Google review text goes here, word for word. Longer reviews clamp to four lines and open with “Read more”, so one long review never stretches every card in the carousel.",
-  placeholder: true,
-}));
+export const reviews: Review[] = [
+  {
+    name: "Emily",
+    role: GOOGLE,
+    quote:
+      "I am so happy with my experience and results with Dr Tippet at Star Dentistry in Pyrmont. He has designed my treatment with so much attention to detail so my teeth are perfection. Best value for my investment and the whole team are so kind, professional and organised, so impressed and highly recommend.",
+  },
+  {
+    name: "Josh Matthews",
+    role: GOOGLE,
+    quote:
+      "Had a surprisingly amazing experience here! The staff was extremely welcoming and the dentist did a great job of explaining exactly what was wrong and how to fix it. I came in for a wisdom tooth extraction and the process was lightning fast and completely painless. Highly recommend!",
+  },
+  {
+    name: "Kierra Morris",
+    role: GOOGLE,
+    quote: "Dr Richard Tippett’s precision with my crown work meant zero adjustments needed, fit was perfect immediately.",
+  },
+  {
+    name: "AV",
+    role: GOOGLE,
+    quote:
+      "This is the best clinic to visit for dental treatment. The dentist performs the work with great cleanliness, care, and professionalism. Both the dentist and the staff are polite, friendly, and helpful, offering excellent service. Thank you again.",
+  },
+  {
+    name: "yaelah Gi",
+    role: GOOGLE,
+    quote: "Clinic runs on time every visit. EVERY visit. Still surprises me honestly",
+  },
+  {
+    name: "Kulander C",
+    role: GOOGLE,
+    quote: "Dr Richard is amazing, my smile after the work completely exceeded my expectations. Highly recommend.",
+  },
+  {
+    name: "Niswatun Khoiroh",
+    role: GOOGLE,
+    quote:
+      "The flexible payment plans available at STAR dentistry Pyrmont made it possible for me to proceed with my dental implants without financial strain, and the outstanding results have been well worth the investment.",
+  },
+  {
+    name: "Patrik Vachan",
+    role: GOOGLE,
+    quote: "Dr Tippett is very knowledgeable and professional. He takes great care in his work. I highly recommend him.",
+  },
+  {
+    name: "Nathaniel Colby",
+    role: GOOGLE,
+    quote: "The composite bonding on my front teeth looks so seamless that even my closest friends cannot tell where the work was done",
+  },
+  {
+    name: "Tina Oli",
+    role: GOOGLE,
+    quote:
+      "STAR dentistry is a definite destination for all your dental concerns. All the team members ensures you are taken good care of. Reception follow up well with all the appointments. Highly recommend!",
+  },
+  {
+    name: "Chellin Meilani",
+    role: GOOGLE,
+    quote: "Reception staff booked my emergency visit without any fuss, made a stressful situation feel completely manageable from the first call.",
+  },
+  {
+    name: "Rifki Raihanul",
+    role: GOOGLE,
+    quote: "Root canal treatment was performed expertly. The procedure was much more comfortable than expected.",
+  },
+  {
+    name: "kris tina",
+    role: GOOGLE,
+    quote:
+      "I highly recommend Star dentistry. All the team from reception staff to doctor are very professional and knowledgeable and procedure done was very thorough. Moreover, educative session at the end was an eye opener.",
+  },
+  {
+    name: "Shreya Upadhaya",
+    role: GOOGLE,
+    quote:
+      "STAR dentistry is very well equipped and a clean practice. Everything is systematic and of course treatment was very painless and well-explained. Highly recommend!",
+  },
+  {
+    name: "Alfin Septiawan",
+    role: GOOGLE,
+    quote: "Emergency dental visit handled professionally. From reception to treatment, the team was efficient while maintaining a calm atmosphere.",
+  },
+  {
+    name: "JB Barcelon",
+    role: GOOGLE,
+    quote: "Highly recommend this clinic. Friendly staff, excellent service, and a comfortable experience every time.",
+  },
+  {
+    name: "Jayla Griffin",
+    role: GOOGLE,
+    quote: "Been coming here for two years now and it’s been consistent every single time",
+  },
+  {
+    name: "Reid Bevan",
+    role: GOOGLE,
+    quote: "This was my second visit to STAR and Dr Grace. Her and the staff were knowledgeable, calming and personable. This is a dentist I actually enjoy visiting!!",
+  },
+];
