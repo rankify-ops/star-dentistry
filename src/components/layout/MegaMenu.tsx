@@ -143,7 +143,7 @@ export function AboutMega({ onDone }: { onDone: () => void }) {
           onDone={onDone}
           title="Our Practice"
           note="Pyrmont boutique dental clinic"
-          img={<Photo name="reception-desk" alt="" sizes="80px" />}
+          img={<Photo name="reception-new" alt="" sizes="80px" />}
         />
         <Card
           href={live("/meet-the-team")}

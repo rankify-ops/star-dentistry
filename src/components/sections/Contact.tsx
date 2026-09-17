@@ -6,26 +6,29 @@ export function Contact() {
   return (
     <section id="contact" className="bg-paper pb-20 lg:pb-28">
       <div className="ctr">
-        {/* CTA band */}
-        <div className="relative isolate overflow-hidden rounded-[32px] bg-ink px-6 py-16 text-white md:px-14 md:py-20">
-          <div className="absolute inset-0 -z-10 opacity-35">
-            <Photo name="reception" alt="" sizes="(min-width: 1280px) 1216px, 100vw" />
+        {/* CTA band. The street photo sits in its own panel rather than behind
+            the text: the original is 680px wide and goes soft stretched across
+            the full band. */}
+        <div className="grid items-center gap-8 overflow-hidden rounded-[32px] bg-ink px-6 py-14 text-white md:px-12 lg:grid-cols-[1fr_minmax(0,420px)] lg:gap-12 lg:py-12 lg:pr-12">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-teal">Get in touch</p>
+            <h2 className="h2 mt-4 max-w-[20ch] text-white">
+              Start your journey to <em className="italic text-teal">smile confidence</em> in Pyrmont today!
+            </h2>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <a href={site.booking} className="btn btn-teal group">
+                Book online
+                <IconArrow size={16} className="transition-transform group-hover:translate-x-1" />
+              </a>
+              <a href={site.tel} className="btn gap-2.5 border border-white/30 tracking-[0.1em] text-white hover:border-white">
+                <IconPhone size={17} />
+                {site.phone}
+              </a>
+            </div>
           </div>
-          <div className="absolute inset-0 -z-10 bg-[linear-gradient(100deg,rgba(21,48,42,.96)_0%,rgba(21,48,42,.82)_55%,rgba(21,48,42,.45)_100%)]" />
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-teal">Get in touch</p>
-          <h2 className="h2 mt-4 max-w-[20ch] text-white">
-            Start your journey to <em className="italic text-teal">smile confidence</em> in Pyrmont today!
-          </h2>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a href={site.booking} className="btn btn-teal group">
-              Book online
-              <IconArrow size={16} className="transition-transform group-hover:translate-x-1" />
-            </a>
-            <a href={site.tel} className="btn gap-2.5 border border-white/30 tracking-[0.1em] text-white hover:border-white">
-              <IconPhone size={17} />
-              {site.phone}
-            </a>
-          </div>
+          <a href={site.maps} className="group plate plate-zoom block aspect-[4/2.6] rounded-[24px] lg:aspect-[4/3]">
+            <Photo name="exterior" alt="The STAR dentistry building on Pyrmont Street" sizes="(min-width: 1024px) 420px, 100vw" />
+          </a>
         </div>
 
         {/* Details */}

@@ -17,6 +17,14 @@ const OUT = "public/img";
 mkdirSync(OUT, { recursive: true });
 
 const PHOTOS = [
+  // Sent by the client 18 Sep 2026 — brighter and more recent than the
+  // Squarespace uploads. Small originals (~680px), so they're never given a
+  // slot wider than that on screen.
+  ["new-02.webp", "surgery"],
+  ["new-03.webp", "entry"],
+  ["new-08.webp", "reception-new"],
+  ["new-05.webp", "exterior"],
+  ["new-06.webp", "smile"],
   ["04-14bb6f4c-Stardetails_printsized-11.jpg", "reception"],
   ["14-f7e88282-STAR_Reception_Web.webp", "reception-desk"],
   ["15-2faefeed-Starspaces_printsized-1_retouchedtiles.webp", "steri"],

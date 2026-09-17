@@ -70,10 +70,10 @@ export function WhyChoose() {
             <Photo name="dr-consult" alt="Dr Tippett in a dental implant consultation" sizes="(min-width: 1024px) 260px, 50vw" />
           </div>
           <div className="plate aspect-square rounded-[26px] sm:aspect-[4/5]">
-            <Photo name="reception-desk" alt="STAR dentistry reception desk" sizes="(min-width: 1024px) 260px, 50vw" />
+            <Photo name="entry" alt="Reception at STAR dentistry, looking out to Pyrmont Street" sizes="(min-width: 1024px) 260px, 50vw" />
           </div>
           <div className="plate aspect-square rounded-[26px] sm:aspect-[4/5]">
-            <Photo name="steri" alt="The sterilisation room at STAR dentistry" sizes="(min-width: 1024px) 260px, 50vw" />
+            <Photo name="smile" alt="A patient wearing clear aligners" sizes="(min-width: 1024px) 260px, 50vw" />
           </div>
         </Reveal>
       </div>

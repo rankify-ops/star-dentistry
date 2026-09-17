@@ -50,8 +50,9 @@ export function Hero() {
         </div>
 
         <div className="load-in relative" style={d(200)}>
-          <div className="hero-img plate aspect-[4/3.4] rounded-[28px] shadow-l lg:aspect-[4/4.3]">
-            <Photo name="reception" alt="Reception at STAR dentistry in Pyrmont with the STAR dentistry sign" priority sizes="(min-width: 1024px) 50vw, 100vw" />
+          {/* The client's own photo, 680px wide — never given a slot wider than that. */}
+          <div className="hero-img plate mx-auto aspect-[4/3] max-w-[680px] rounded-[28px] shadow-l lg:aspect-[4/3.2]">
+            <Photo name="surgery" alt="A treatment room at STAR dentistry in Pyrmont" priority sizes="(min-width: 1024px) 620px, 100vw" />
           </div>
 
           <div className="glass absolute -bottom-6 left-4 flex items-center gap-3.5 rounded-[22px] p-2.5 pr-5 shadow-l sm:left-6 lg:-left-10 lg:bottom-10">
