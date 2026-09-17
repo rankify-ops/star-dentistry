@@ -48,7 +48,7 @@ for (const [src, slug] of PHOTOS) {
  */
 for (const w of [200, 400]) {
   await sharp(`${RAW}/05-f7eb3179-Dr_Richard_jpg.webp`)
-    .extract({ left: 150, top: 150, width: 2350, height: 2350 })
+    .extract({ left: 100, top: 450, width: 2300, height: 2300 })
     .resize({ width: w })
     .webp({ quality: 86 })
     .toFile(`${OUT}/dr-avatar-${w}.webp`);
