@@ -13,13 +13,14 @@ export default function Home() {
   return (
     <>
       <Hero />
+      {/* The health funds, brands and memberships, straight under the hero. */}
+      <Logos />
       <Trust />
       <Intro />
       <ReviewQuote n={0} tone="mist" />
       <Services />
       <ReviewQuote n={1} tone="ink" />
       <WhyChoose />
-      <Logos />
       <Reviews />
       <Faqs />
       <ReviewQuote n={2} tone="mist" />
