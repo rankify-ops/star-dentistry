@@ -100,13 +100,21 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 400; }
   color: var(--teal-ink);
 }
 
+/* The hero headline sizes off ITS COLUMN, not the viewport, so
+   "Expert Personalised" holds one line at every width — the column is much
+   narrower than the screen once the layout goes two-up. */
+.hero-col { container-type: inline-size; }
+
 .display {
   font-family: var(--font-serif-display), Georgia, serif;
   font-weight: 400;
-  /* 8.6vw keeps "Expert Personalised" on one line down to 360px. */
-  font-size: clamp(31px, 8.6vw, 62px);
+  font-size: clamp(31px, 8.6vw, 58px);
   line-height: 1.02;
   letter-spacing: -0.02em;
+}
+
+@container (min-width: 0px) {
+  .display { font-size: clamp(31px, 9.4cqi, 58px); }
 }
 
 .h2 {

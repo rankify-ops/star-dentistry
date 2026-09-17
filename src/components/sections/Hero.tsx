@@ -11,7 +11,7 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden bg-paper pt-[100px] lg:pt-[114px]">
       <div aria-hidden className="absolute -right-40 -top-40 -z-0 size-[620px] rounded-full bg-mist blur-3xl" />
       <div className="ctr relative grid items-center gap-10 pb-14 pt-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-16 lg:pb-24 lg:pt-14">
-        <div>
+        <div className="hero-col">
           {/* Above the headline, as on Rankify. No reviewer faces until the
               client sends real ones — stand-in heads next to a real rating
               read as stock photography. */}
@@ -22,8 +22,13 @@ export function Hero() {
               <span className="hidden sm:inline"> from</span> {rating.count} {rating.source} reviews
             </span>
           </a>
-          <h1 className="display load-in mt-6 md:max-w-[15ch]" style={d(120)}>
-            Expert Personalised Dental Care in <em className="italic text-teal-ink">Pyrmont, Sydney</em>
+          {/* "Expert Personalised" holds its own line from md up; on phones it
+              all flows naturally. */}
+          <h1 className="display load-in mt-6" style={d(120)}>
+            <span className="md:block">Expert Personalised</span>{" "}
+            <span>
+              Dental Care in <em className="whitespace-nowrap italic text-teal-ink">Pyrmont, Sydney</em>
+            </span>
           </h1>
           <p className="load-in lede mt-6 max-w-[46ch] md:text-[17px]" style={d(240)}>
             Individually tailored treatment at our Pyrmont boutique dental clinic to help you achieve your smile goals
