@@ -103,8 +103,8 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 400; }
 .display {
   font-family: var(--font-serif-display), Georgia, serif;
   font-weight: 400;
-  font-size: clamp(42px, 6.4vw, 84px);
-  line-height: 0.98;
+  font-size: clamp(36px, 4.7vw, 62px);
+  line-height: 1.02;
   letter-spacing: -0.02em;
 }
 
