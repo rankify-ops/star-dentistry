@@ -3,6 +3,7 @@ import { Inter, Cormorant_Garamond } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileBar } from "@/components/layout/MobileBar";
+import { PreviewGate } from "@/components/PreviewGate";
 import { site } from "@/content/site";
 import { asset } from "@/lib/basePath";
 import "./globals.css";
@@ -82,6 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <MobileBar />
+        <PreviewGate site="star-dentistry" staffPath="/staff-f58597" clientName="Star Dentistry" />
       </body>
     </html>
   );
