@@ -180,3 +180,39 @@ export const IconYoutube = (p: P) => (
     <path d="m10.5 9.5 4 2.5-4 2.5Z" />
   </Svg>
 );
+
+/*
+ * The trust-bar set. Drawn for their own line rather than reused from the
+ * generic set, so each one says something specific: a rating star, a clock
+ * with a long sweep, a card with no interest on it, a health fund card.
+ */
+export const IconRating = (p: P) => (
+  <Svg {...p}>
+    <path d="m12 3.6 2.5 5.1 5.6.8-4.05 3.95.95 5.55-5-2.63-5 2.63.95-5.55L3.9 9.5l5.6-.8Z" />
+  </Svg>
+);
+/** An hourglass — "long appointments, no rushing". */
+export const IconLongAppointment = (p: P) => (
+  <Svg {...p}>
+    <path d="M6.8 3.4h10.4M6.8 20.6h10.4" />
+    <path d="M7.6 3.4v3.2c0 1.6 1.3 2.7 2.6 3.7.9.6.9 1.8 0 2.4-1.3 1-2.6 2.1-2.6 3.7v3.2" />
+    <path d="M16.4 3.4v3.2c0 1.6-1.3 2.7-2.6 3.7-.9.6-.9 1.8 0 2.4 1.3 1 2.6 2.1 2.6 3.7v3.2" />
+  </Svg>
+);
+/** A card with a percent sign — interest free finance. */
+export const IconNoInterest = (p: P) => (
+  <Svg {...p}>
+    <rect x="2.8" y="5" width="18.4" height="14" rx="2.6" />
+    <path d="M2.8 9.2h18.4" />
+    <path d="m9.2 16.2 5.6-4.4" />
+    <circle cx="9.5" cy="12.2" r=".85" />
+    <circle cx="14.5" cy="15.8" r=".85" />
+  </Svg>
+);
+/** A health fund card, claimed on the spot. */
+export const IconHealthFund = (p: P) => (
+  <Svg {...p}>
+    <rect x="2.8" y="4.8" width="18.4" height="14.4" rx="2.6" />
+    <path d="M8.6 12h6.8M12 8.6v6.8" />
+  </Svg>
+);
