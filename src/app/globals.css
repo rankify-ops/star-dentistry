@@ -296,13 +296,13 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 400; }
 }
 /* Durations are tuned per breakpoint because the track is a fixed width:
    the same duration reads much slower on a phone. */
-.logo-rail { animation: marquee 44s linear infinite; }
+.logo-rail { animation: marquee 56s linear infinite; }
 .logo-rail:hover { animation-play-state: paused; }
 @media (min-width: 768px) { .logo-rail { animation-duration: 70s; } }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* Reviews travel the other way. */
-.review-rail { animation: marquee-reverse 48s linear infinite; }
+.review-rail { animation: marquee-reverse 60s linear infinite; }
 @media (min-width: 768px) { .review-rail { animation-duration: 72s; } }
 .review-rail:hover { animation-play-state: paused; }
 @keyframes marquee-reverse { from { transform: translateX(-50%); } to { transform: translateX(0); } }

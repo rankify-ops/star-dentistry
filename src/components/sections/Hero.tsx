@@ -65,10 +65,14 @@ export function Hero() {
 
           <a
             href={site.booking}
-            className="absolute right-3 top-4 hidden items-center gap-2.5 sm:flex rounded-full border border-rule bg-white py-2.5 pl-3.5 pr-5 shadow-l transition-colors hover:bg-mist sm:right-6 lg:-right-6 lg:top-10"
+            className="absolute right-3 top-3 flex items-center gap-2 rounded-full border border-rule bg-white py-2 pl-3 pr-4 shadow-l transition-colors hover:bg-mist sm:right-6 sm:top-4 sm:gap-2.5 sm:py-2.5 sm:pl-3.5 sm:pr-5 lg:-right-6 lg:top-10"
           >
-            <IconClock size={16} className="flex-none text-teal-ink" />
-            <span className="text-[12.5px] font-medium text-ink">Open Thursdays until 7pm</span>
+            <IconClock size={15} className="flex-none text-teal-ink" />
+            {/* Phones get the short label so the pill can't span the photo. */}
+            <span className="text-[11.5px] font-medium text-ink sm:text-[12.5px]">
+              <span className="sm:hidden">Thursdays until 7pm</span>
+              <span className="hidden sm:inline">Open Thursdays until 7pm</span>
+            </span>
           </a>
         </div>
       </div>
