@@ -41,6 +41,19 @@ for (const [src, slug] of PHOTOS) {
   }
 }
 
+/*
+ * Dr Richard, cropped square on his face for the round avatars. The full
+ * portrait is head-to-waist, so a plain centre crop of it sits his head far
+ * too low in a circle.
+ */
+for (const w of [200, 400]) {
+  await sharp(`${RAW}/05-f7eb3179-Dr_Richard_jpg.webp`)
+    .extract({ left: 150, top: 150, width: 2350, height: 2350 })
+    .resize({ width: w })
+    .webp({ quality: 86 })
+    .toFile(`${OUT}/dr-avatar-${w}.webp`);
+}
+
 // Popular Services illustrations (round, on transparent).
 const SERVICES = [
   ["08-16512932-1.png", "svc-implant"],

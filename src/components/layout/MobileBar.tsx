@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Photo } from "@/components/ui/Photo";
+import { DrAvatar } from "@/components/ui/Avatar";
 import { IconPhone, IconStar } from "@/components/ui/Icons";
 import { rating, site } from "@/content/site";
 
@@ -49,7 +49,7 @@ export function MobileBar() {
       <div className={`fixed bottom-6 right-6 z-40 hidden transition-all duration-500 md:block ${motion}`}>
         <div className="frost flex items-center gap-4 rounded-full border border-rule py-2 pl-2 pr-2 shadow-l">
           <span className="plate block size-12 flex-none rounded-full">
-            <Photo name="dr-richard" alt="" sizes="48px" className="object-top" />
+            <DrAvatar />
           </span>
           <span className="hidden pr-1 lg:block">
             <span className="flex items-center gap-1 text-[13.5px] font-medium text-ink">

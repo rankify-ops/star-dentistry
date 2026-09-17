@@ -1,7 +1,8 @@
 import { Photo } from "@/components/ui/Photo";
+import { DrAvatar } from "@/components/ui/Avatar";
 import { IconArrow, IconPhone } from "@/components/ui/Icons";
-import { Initials, Stars } from "@/components/ui/Stars";
-import { rating, reviews, site } from "@/content/site";
+import { Stars } from "@/components/ui/Stars";
+import { rating, site } from "@/content/site";
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;
 
@@ -11,23 +12,13 @@ export function Hero() {
       <div aria-hidden className="absolute -right-40 -top-40 -z-0 size-[620px] rounded-full bg-mist blur-3xl" />
       <div className="ctr relative grid items-center gap-10 pb-14 pt-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-16 lg:pb-24 lg:pt-14">
         <div>
-          {/* Above the headline, as on Rankify: faces + stars do more for a cold visitor than anything below them. */}
-          <a href="#reviews" className="load-in group flex flex-wrap items-center gap-x-3 gap-y-1.5">
-            <span className="flex">
-              {reviews.slice(0, 4).map((r) => (
-                <Initials
-                  key={r.name}
-                  name={r.name}
-                  placeholder={r.placeholder}
-                  className="-ml-2.5 size-10 border-2 border-paper text-[13px] first:ml-0"
-                />
-              ))}
-            </span>
-            <span>
-              <Stars className="size-3.5" />
-              <span className="mt-0.5 block text-[13.5px] text-ink-2">
-                <strong className="font-semibold text-ink">{rating.score} stars</strong> from {rating.count} {rating.source} reviews
-              </span>
+          {/* Above the headline, as on Rankify. No reviewer faces until the
+              client sends real ones — stand-in heads next to a real rating
+              read as stock photography. */}
+          <a href="#reviews" className="load-in inline-flex items-center gap-3 rounded-full border border-rule bg-white py-2 pl-4 pr-5 shadow-s">
+            <Stars className="size-[15px]" />
+            <span className="text-[13.5px] text-ink-2">
+              <strong className="font-semibold text-ink">{rating.score} stars</strong> from {rating.count} {rating.source} reviews
             </span>
           </a>
           <h1 className="display load-in mt-7 max-w-[13ch]" style={d(120)}>
@@ -57,7 +48,7 @@ export function Hero() {
 
           <div className="glass absolute -bottom-6 left-4 flex items-center gap-3.5 rounded-[22px] p-2.5 pr-5 shadow-l sm:left-6 lg:-left-10 lg:bottom-10">
             <span className="plate block size-14 flex-none rounded-full">
-              <Photo name="dr-richard" alt="Dr Richard Tippett" sizes="56px" className="object-top" />
+              <DrAvatar alt="Dr Richard Tippett" />
             </span>
             <span>
               <span className="serif block text-[22px] leading-none text-ink">Dr Richard Tippett</span>

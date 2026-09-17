@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { asset } from "@/lib/basePath";
 import { Photo } from "@/components/ui/Photo";
+import { DrAvatar } from "@/components/ui/Avatar";
 import { IconArrow, IconNext, IconPhone, IconSparkle } from "@/components/ui/Icons";
 import { about, categories, hours, live, popular, site } from "@/content/site";
 
@@ -150,7 +151,7 @@ export function AboutMega({ onDone }: { onDone: () => void }) {
           onDone={onDone}
           title="Meet The Team"
           note="Dr Richard Tippett · 20 years experience"
-          img={<Photo name="dr-richard" alt="" sizes="80px" className="object-top" />}
+          img={<DrAvatar />}
         />
         <Card
           href={live("/check-up-clean-sydney")}
