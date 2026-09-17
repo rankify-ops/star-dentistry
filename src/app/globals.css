@@ -1,0 +1,309 @@
+@import "tailwindcss";
+
+/*
+ * STAR dentistry
+ * ──────────────
+ * Styling system from the Girls Getaways rebuild (display serif + tracked caps,
+ * frosted header, drill-down mega menu), re-skinned in STAR's own colours: the
+ * mint teal (#7ec7b4) sampled from the logo panel, the deeper green of the
+ * reception sign, and the soft stone of the "DENTISTRY" lettering.
+ */
+
+:root {
+  --ink: #15302a;
+  --ink-2: #4a5c57;
+  --ink-3: #7f8e8a;
+
+  --teal: #7ec7b4;
+  --teal-deep: #3f9a84;
+  /* Teal dark enough for small text on white (6:1). */
+  --teal-ink: #23705e;
+  --teal-tint: #dff1eb;
+
+  --mist: #eef6f3;
+  --sand: #f5f7f5;
+  --stone: #e2e0dc;
+  --paper: #fcfdfc;
+  --rule: #e2ebe7;
+  --rule-2: #cddad5;
+
+  --shadow-s: 0 2px 10px rgba(21, 48, 42, 0.05);
+  --shadow: 0 8px 30px rgba(21, 48, 42, 0.08);
+  --shadow-l: 0 18px 60px rgba(21, 48, 42, 0.14);
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-teal: var(--teal);
+  --color-teal-deep: var(--teal-deep);
+  --color-teal-ink: var(--teal-ink);
+  --color-teal-tint: var(--teal-tint);
+  --color-mist: var(--mist);
+  --color-sand: var(--sand);
+  --color-stone: var(--stone);
+  --color-paper: var(--paper);
+  --color-rule: var(--rule);
+  --color-rule-2: var(--rule-2);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-serif-display);
+  --default-transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* In the components layer so Tailwind utilities (hidden, lg:flex …) win. */
+@layer components {
+
+html {
+  overflow-x: hidden;
+  background: var(--paper);
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink-2);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 { color: var(--ink); font-weight: 400; }
+
+::selection { background: var(--teal); color: var(--ink); }
+
+:focus-visible { outline: 2px solid var(--teal-deep); outline-offset: 3px; }
+
+.ctr {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+@media (min-width: 640px) { .ctr { padding-inline: 24px; } }
+@media (min-width: 768px) { .ctr { padding-inline: 32px; } }
+
+/* ── TYPE ──────────────────────────────────────────────────────────── */
+.serif { font-family: var(--font-serif-display), Georgia, serif; }
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal-ink);
+}
+
+.display {
+  font-family: var(--font-serif-display), Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(42px, 6.4vw, 84px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
+.h2 {
+  font-family: var(--font-serif-display), Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(34px, 4.6vw, 56px);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.lede { font-size: 16px; line-height: 1.75; color: var(--ink-2); }
+
+.sec { padding-block: 72px; }
+@media (min-width: 1024px) { .sec { padding-block: 112px; } }
+
+/* ── FROSTED GLASS ─────────────────────────────────────────────────────
+   ONE unprefixed backdrop-filter. Lightning CSS adds -webkit- itself and
+   deletes the standard property if you hand-write both. */
+.frost {
+  background: rgba(252, 253, 252, 0.86);
+  backdrop-filter: blur(22px) saturate(1.5);
+}
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .frost { background: var(--paper); }
+  .glass { background: #fff; }
+}
+
+/* ── BUTTONS ───────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 52px;
+  padding-inline: 26px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease),
+    transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.btn:active { transform: scale(0.98); }
+.btn-ink { background: var(--ink); color: #fff; }
+.btn-ink:hover { background: var(--teal-ink); }
+.btn-teal { background: var(--teal); color: var(--ink); }
+.btn-teal:hover { background: var(--ink); color: #fff; }
+.btn-line { border: 1px solid var(--rule-2); color: var(--ink); background: transparent; }
+.btn-line:hover { border-color: var(--ink); }
+.btn-white { background: #fff; color: var(--ink); }
+.btn-white:hover { background: var(--teal); }
+.btn-sm { height: 42px; padding-inline: 20px; font-size: 11px; }
+
+.link-u {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 0.4s var(--ease);
+}
+.link-u:hover { background-size: 100% 1px; }
+
+/* ── HEADER ────────────────────────────────────────────────────────── */
+.nav-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 44px;
+  padding-inline: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-radius: 999px;
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+.nav-btn:hover, .nav-btn[aria-expanded="true"] { background: var(--mist); }
+.nav-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
+.chev { transition: transform 0.3s var(--ease); }
+
+.mega { animation: mega-in 0.35s var(--ease) both; }
+@keyframes mega-in {
+  from { opacity: 0; transform: translateY(-8px); }
+}
+
+/* A drill-down row in the mega menu. */
+.drill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-size: 14.5px;
+  color: var(--ink);
+  text-align: left;
+  transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+.drill:hover, .drill[data-active="true"] { background: var(--mist); }
+.drill[data-active="true"] .drill-arrow { transform: translateX(3px); color: var(--teal-ink); }
+.drill-arrow { flex: none; transition: transform 0.25s var(--ease); color: var(--ink-3); }
+
+/* Mega menu type — the only five text styles either panel uses:
+   .eyebrow (column label) · .drill (rows) · .menu-title · .menu-card-title · .menu-note */
+.menu-title { font-family: var(--font-serif-display), Georgia, serif; font-size: 34px; line-height: 1; color: var(--ink); }
+.menu-card-title { font-family: var(--font-serif-display), Georgia, serif; font-size: 22px; line-height: 1.1; color: var(--ink); }
+.menu-note { font-size: 12.5px; line-height: 1.45; color: var(--ink-2); }
+
+.col-in { animation: col-in 0.3s var(--ease) both; }
+@keyframes col-in {
+  from { opacity: 0; transform: translateX(-6px); }
+}
+
+/* ── CARDS ─────────────────────────────────────────────────────────── */
+.plate { position: relative; overflow: hidden; background: var(--mist); }
+.plate img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s var(--ease); }
+.group:hover .plate-zoom img { transform: scale(1.045); }
+
+.stepper {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--rule-2);
+  color: var(--ink);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.stepper:hover { border-color: var(--ink); }
+
+/* Snap rails */
+.rail {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  scroll-padding-inline: 16px;
+  padding-inline: 16px;
+}
+.rail::-webkit-scrollbar { display: none; }
+.rail > * { scroll-snap-align: start; flex: none; }
+
+/* ── HERO ──────────────────────────────────────────────────────────── */
+.load-in { animation: load-in 1s var(--ease) both; animation-delay: var(--d, 0ms); }
+@keyframes load-in { from { opacity: 0; transform: translateY(16px); } }
+
+.hero-img img { animation: hero-zoom 2.4s var(--ease) both; }
+@keyframes hero-zoom { from { transform: scale(1.08); } }
+
+/* ── SHEETS ────────────────────────────────────────────────────────── */
+.scrim { animation: fade 0.3s ease both; }
+@keyframes fade { from { opacity: 0; } }
+.slide-r { animation: slide-r 0.4s var(--ease) both; }
+.slide-l { animation: slide-l 0.4s var(--ease) both; }
+@keyframes slide-r { from { opacity: 0; transform: translateX(28px); } }
+@keyframes slide-l { from { opacity: 0; transform: translateX(-28px); } }
+
+/* ── ENTRANCES ─────────────────────────────────────────────────────── */
+.rise { opacity: 0; transform: translateY(20px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+.rise[data-shown="true"] { opacity: 1; transform: none; }
+
+/* ── MARQUEE ───────────────────────────────────────────────────────── */
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track { display: flex; width: max-content; animation: marquee 45s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* Reviews travel the other way. */
+.review-rail { animation: marquee-reverse 70s linear infinite; }
+.review-rail:hover { animation-play-state: paused; }
+@keyframes marquee-reverse { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+/* ── FAQ ───────────────────────────────────────────────────────────── */
+.faq summary { list-style: none; cursor: pointer; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq .faq-plus { transition: transform 0.35s var(--ease), background-color 0.25s, color 0.25s; }
+.faq[open] .faq-plus { transform: rotate(45deg); background: var(--ink); color: #fff; border-color: var(--ink); }
+.faq[open] .faq-body { animation: load-in 0.5s var(--ease) both; }
+
+/* Highlighted phrases in the "Why choose" copy. */
+.hl { color: var(--ink); background: linear-gradient(transparent 62%, var(--teal-tint) 62%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .rise { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .load-in, .mega, .scrim, .col-in, .slide-r, .slide-l, .marquee-track, .review-rail, .hero-img img, .faq[open] .faq-body { animation: none !important; }
+}
+
+}
