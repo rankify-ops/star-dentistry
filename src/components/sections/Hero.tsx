@@ -41,37 +41,30 @@ export function Hero() {
           </div>
         </div>
 
-        {/* A collage rather than one big photograph: the client's originals are
-            only ~680px wide, so several smaller tiles stay sharp where one
-            hero-width image goes soft. */}
-        <div className="load-in mx-auto grid w-full max-w-[620px] grid-cols-5 gap-3 lg:max-w-none" style={d(200)}>
-          <div className="hero-img plate col-span-5 aspect-[16/10] rounded-[26px] shadow">
-            <Photo name="surgery" alt="A treatment room at STAR dentistry in Pyrmont" priority sizes="(min-width: 1024px) 600px, 92vw" />
+        <div className="load-in relative mx-auto w-full max-w-[620px] lg:max-w-none" style={d(200)}>
+          {/* The client's own photo, ~680px wide — never given a slot wider than that. */}
+          <div className="hero-img plate aspect-[4/3] rounded-[28px] shadow-l lg:aspect-[4/3.2]">
+            <Photo name="surgery" alt="A treatment room at STAR dentistry in Pyrmont" priority sizes="(min-width: 1024px) 620px, 92vw" />
           </div>
 
-          <div className="plate col-span-2 aspect-[3/4] rounded-[22px] shadow-s">
-            <Photo name="smile" alt="A patient wearing Invisalign clear aligners" sizes="(min-width: 1024px) 240px, 38vw" />
-          </div>
-
-          <div className="col-span-3 flex flex-col gap-3">
-            <div className="flex flex-1 items-center gap-3.5 rounded-[22px] border border-rule bg-white p-3 shadow-s">
-              <span className="plate block size-14 flex-none rounded-full sm:size-16">
+          {/* Two cards stacked over the photo's bottom-left corner. */}
+          <div className="absolute -bottom-5 left-3 flex flex-col items-start sm:left-6 lg:-left-8 lg:bottom-8">
+            <div className="glass flex items-center gap-3.5 rounded-[22px] p-2.5 pr-5 shadow-l">
+              <span className="plate block size-14 flex-none rounded-full">
                 <DrAvatar alt="Dr Richard Tippett" />
               </span>
-              <span className="min-w-0">
-                <span className="serif block text-[21px] leading-none text-ink sm:text-[24px]">Dr Richard Tippett</span>
-                <span className="mt-1.5 block text-[12.5px] text-ink-2">20 years experience</span>
+              <span>
+                <span className="serif block text-[22px] leading-none text-ink">Dr Richard Tippett</span>
+                <span className="mt-1 block text-[12.5px] text-ink-2">20 years experience</span>
               </span>
             </div>
 
-            <a href={site.booking} className="flex flex-1 items-center gap-3.5 rounded-[22px] bg-mist p-4 transition-colors hover:bg-teal-tint">
-              <span className="grid size-11 flex-none place-items-center rounded-full bg-white text-teal-ink">
-                <IconClock size={19} />
-              </span>
-              <span className="min-w-0">
-                <span className="block text-[14px] font-medium text-ink">Open Thursdays until 7pm</span>
-                <span className="mt-0.5 block text-[12.5px] text-ink-2">After-hours appointments</span>
-              </span>
+            <a
+              href={site.booking}
+              className="glass -mt-2 ml-8 flex items-center gap-2.5 rounded-full py-2 pl-3 pr-4 shadow-l transition-colors hover:bg-white"
+            >
+              <IconClock size={16} className="flex-none text-teal-ink" />
+              <span className="text-[12.5px] font-medium text-ink">Open Thursdays until 7pm</span>
             </a>
           </div>
         </div>
