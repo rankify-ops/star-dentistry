@@ -140,11 +140,12 @@ export const suburbs =
  * REVIEWS — PLACEHOLDERS. Waiting on the client's real Google reviews.
  * Every entry is flagged `placeholder` and renders a visible "Placeholder" tag;
  * swap in the verbatim review text + reviewer name and delete the flag.
- * The 4.9 star rating itself is real (from the live site's Google badge).
+ * The 4.9 star rating is real (the live site's Google badge); the 200+ review
+ * count is from the client, 17 Sep 2026.
  */
 export type Review = { name: string; role: string; quote: string; placeholder?: boolean };
 
-export const rating = { score: "4.9", source: "Google" };
+export const rating = { score: "4.9", count: "200+", source: "Google" };
 
 // The two or three standouts, each given its own section as you scroll.
 export const highlights: Review[] = [

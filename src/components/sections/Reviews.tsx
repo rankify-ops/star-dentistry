@@ -67,7 +67,9 @@ export function Reviews() {
             <span className="serif text-[64px] leading-none text-ink">{rating.score}</span>
             <span>
               <Stars className="size-4" />
-              <span className="mt-1 block text-[13px] text-ink-3">on {rating.source}</span>
+              <span className="mt-1 block text-[13px] text-ink-3">
+                {rating.count} {rating.source} reviews
+              </span>
             </span>
           </div>
           <a href={site.maps} className="btn btn-line btn-sm group hidden sm:inline-flex">

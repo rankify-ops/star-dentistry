@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Photo } from "@/components/ui/Photo";
 import { IconPhone, IconStar } from "@/components/ui/Icons";
-import { site } from "@/content/site";
+import { rating, site } from "@/content/site";
 
 /*
  * The floating call + book CTA. Appears once the hero's own buttons have
@@ -53,7 +53,7 @@ export function MobileBar() {
           </span>
           <span className="hidden pr-1 lg:block">
             <span className="flex items-center gap-1 text-[13.5px] font-medium text-ink">
-              <IconStar size={13} className="fill-current text-[#f5b301]" /> 4.9 star rating
+              <IconStar size={13} className="fill-current text-[#f5b301]" /> {rating.score} · {rating.count} reviews
             </span>
             <a href={site.tel} className="link-u text-[13px] tabular-nums text-ink-2 hover:text-ink" tabIndex={tab}>
               {site.phone}

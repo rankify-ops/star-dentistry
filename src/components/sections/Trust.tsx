@@ -2,7 +2,7 @@ import { IconCheck, IconClock, IconStar, IconWallet } from "@/components/ui/Icon
 
 // Each line is a claim the live home page already makes.
 const items = [
-  { icon: IconStar, t: "4.9 star rating", d: "Top rated dentist in Pyrmont" },
+  { icon: IconStar, t: "4.9 star rating", d: "From 200+ Google reviews" },
   { icon: IconClock, t: "Long appointments", d: "So that there is no rushing" },
   { icon: IconWallet, t: "Interest free finance", d: "Partnered with Humm" },
   { icon: IconCheck, t: "On site HICAPS", d: "Use your dental health fund" },

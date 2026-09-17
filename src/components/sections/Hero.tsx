@@ -26,8 +26,7 @@ export function Hero() {
             <span>
               <Stars className="size-3.5" />
               <span className="mt-0.5 block text-[13.5px] text-ink-2">
-                <strong className="font-semibold text-ink">{rating.score} star</strong> {rating.source} rating ·{" "}
-                Pyrmont boutique dental clinic
+                <strong className="font-semibold text-ink">{rating.score} stars</strong> from {rating.count} {rating.source} reviews
               </span>
             </span>
           </a>
