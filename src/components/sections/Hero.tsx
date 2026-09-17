@@ -52,8 +52,8 @@ export function Hero() {
             <Photo name="surgery" alt="A treatment room at STAR dentistry in Pyrmont" priority sizes="(min-width: 1024px) 620px, 92vw" />
           </div>
 
-          {/* Two cards stacked over the photo's bottom-left corner. */}
-          <div className="absolute -bottom-5 left-3 flex flex-col items-start sm:left-6 lg:-left-8 lg:bottom-8">
+          {/* Two cards over the photo's bottom-left corner, with room between them. */}
+          <div className="absolute -bottom-6 left-3 flex flex-col items-start gap-3 sm:left-6 lg:-left-8 lg:bottom-8">
             <div className="glass flex items-center gap-3.5 rounded-[22px] p-2.5 pr-5 shadow-l">
               <span className="plate block size-14 flex-none rounded-full">
                 <DrAvatar alt="Dr Richard Tippett" />
@@ -66,7 +66,7 @@ export function Hero() {
 
             <a
               href={site.booking}
-              className="glass -mt-2 ml-8 flex items-center gap-2.5 rounded-full py-2 pl-3 pr-4 shadow-l transition-colors hover:bg-white"
+              className="glass ml-10 flex items-center gap-2.5 rounded-full py-2.5 pl-3.5 pr-5 shadow-l transition-colors hover:bg-white"
             >
               <IconClock size={16} className="flex-none text-teal-ink" />
               <span className="text-[12.5px] font-medium text-ink">Open Thursdays until 7pm</span>
