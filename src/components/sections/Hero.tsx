@@ -22,7 +22,7 @@ export function Hero() {
               <span className="hidden sm:inline"> from</span> {rating.count} {rating.source} reviews
             </span>
           </a>
-          <h1 className="display load-in mt-6 max-w-[15ch]" style={d(120)}>
+          <h1 className="display load-in mt-6 md:max-w-[15ch]" style={d(120)}>
             Expert Personalised Dental Care in <em className="italic text-teal-ink">Pyrmont, Sydney</em>
           </h1>
           <p className="load-in lede mt-6 max-w-[46ch] md:text-[17px]" style={d(240)}>
