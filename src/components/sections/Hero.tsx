@@ -52,26 +52,24 @@ export function Hero() {
             <Photo name="surgery" alt="A treatment room at STAR dentistry in Pyrmont" priority sizes="(min-width: 1024px) 620px, 92vw" />
           </div>
 
-          {/* Two cards over the photo's bottom-left corner, with room between them. */}
-          <div className="absolute -bottom-6 left-3 flex flex-col items-start gap-3 sm:left-6 lg:-left-8 lg:bottom-8">
-            <div className="glass flex items-center gap-3.5 rounded-[22px] p-2.5 pr-5 shadow-l">
-              <span className="plate block size-14 flex-none rounded-full">
-                <DrAvatar alt="Dr Richard Tippett" />
-              </span>
-              <span>
-                <span className="serif block text-[22px] leading-none text-ink">Dr Richard Tippett</span>
-                <span className="mt-1 block text-[12.5px] text-ink-2">20 years experience</span>
-              </span>
-            </div>
-
-            <a
-              href={site.booking}
-              className="glass ml-10 flex items-center gap-2.5 rounded-full py-2.5 pl-3.5 pr-5 shadow-l transition-colors hover:bg-white"
-            >
-              <IconClock size={16} className="flex-none text-teal-ink" />
-              <span className="text-[12.5px] font-medium text-ink">Open Thursdays until 7pm</span>
-            </a>
+          {/* Opposite corners: the doctor bottom-left, the hours pill top-right. */}
+          <div className="glass absolute -bottom-6 left-3 flex items-center gap-3.5 rounded-[22px] p-2.5 pr-5 shadow-l sm:left-6 lg:-left-8 lg:bottom-10">
+            <span className="plate block size-14 flex-none rounded-full">
+              <DrAvatar alt="Dr Richard Tippett" />
+            </span>
+            <span>
+              <span className="serif block text-[22px] leading-none text-ink">Dr Richard Tippett</span>
+              <span className="mt-1 block text-[12.5px] text-ink-2">20 years experience</span>
+            </span>
           </div>
+
+          <a
+            href={site.booking}
+            className="absolute right-3 top-4 flex items-center gap-2.5 rounded-full border border-rule bg-white py-2.5 pl-3.5 pr-5 shadow-l transition-colors hover:bg-mist sm:right-6 lg:-right-6 lg:top-10"
+          >
+            <IconClock size={16} className="flex-none text-teal-ink" />
+            <span className="text-[12.5px] font-medium text-ink">Open Thursdays until 7pm</span>
+          </a>
         </div>
       </div>
     </section>
